@@ -15,6 +15,7 @@ sns.heatmap(data.isna(), cmap='magma', cbar=False)
 plt.title('Missing Data')
 plt.show()
 
+# TODO: Replace the Nan Values with the Mean of Column
 print(data.shape)
 data = data.dropna()
 print(data.shape)
