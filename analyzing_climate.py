@@ -15,10 +15,8 @@ sns.heatmap(data.isna(), cmap='magma', cbar=False)
 plt.title('Missing Data')
 plt.show()
 
-# TODO: Replace the Nan Values with the Mean of Column
-print(data.shape)
-data = data.dropna()
-print(data.shape)
+data.fillna(data.mean(numeric_only=True), inplace=True)
+print(data.isna().sum())
 
 # Seasonal Temperature over Time
 plt.figure(figsize=(12, 6))
